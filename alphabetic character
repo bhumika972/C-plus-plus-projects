@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+char alphabet ;
+cout<<"The Character of Alphabet  ";
+cin>>alphabet;
+if(alphabet>='a'&& alphabet<='z'){
+cout<<"The Character of Alphabet "<<endl;
+}
+else{
+cout<<"The Character is not of Alphabet"<<endl;
+}
+    
+    
+    return 0;
+}
