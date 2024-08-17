@@ -1,0 +1,193 @@
+INVENTORY MANAGEMENT SYSTEM 
+
+
+#include<iostream>
+#include<fstream>
+#include<string.h>
+#include<stdio.h>
+
+using namespace std;
+
+struct Product {
+    int pid;
+    char pname[20];
+    char category[20];
+    int qty;
+    float price;
+    float amount;
+};
+
+Product p[100];
+
+int I = 0; // Initialize the product count
+
+void input(Product &prod) {
+    cout << "================================ \n";
+    cout << "Enter Product ID      : ";
+    cin >> prod.pid;
+    cout << "Enter Product Name    : ";
+    cin >> prod.pname;
+    cout << "Enter Product Category: ";
+    cin >> prod.category;
+    cout << "Enter Product Qty     : ";
+    cin >> prod.qty;
+    cout << "Enter Product Price   : ";
+    cin >> prod.price;
+
+    prod.amount = prod.price * prod.qty;
+}
+
+void output(Product &prod) {
+    cout << "================================\n";
+    cout << "Product ID    : " << prod.pid << endl;
+    cout << "Product Name  : " << prod.pname << endl;
+    cout << "Product Cat.  : " << prod.category << endl;
+    cout << "Product Qty   : " << prod.qty << endl;
+    cout << "Product Price : " << prod.price << endl;
+    cout << "Product Amount: " << prod.amount << endl;
+}
+
+void showall() {
+    for (int i = 0; i < I; i++) {
+        output(p[i]);
+    }
+
+
+}
+
+void writeToFile() {
+    ofstream file("products.txt", ios::out);
+    if (file.is_open()) {
+        for (int i = 0; i < I; i++) {
+            file << p[i].pid << " "
+                 << p[i].pname << " "
+                 << p[i].category << " "
+                 << p[i].qty << " "
+                 << p[i].price << " "
+                 << p[i].amount << endl;
+        }
+        file.close();
+    } else {
+        cout << "Unable to open file for writing." << endl;
+    }
+}
+
+void readFromFile() {
+    ifstream file("products.txt", ios::in);
+    if (file.is_open()) {
+        while (file >> p[I].pid
+                    >> p[I].pname
+                    >> p[I].category
+                    >> p[I].qty
+                    >> p[I].price
+                    >> p[I].amount) {
+            I++;
+        }
+        file.close();
+    } else {
+        cout << "Unable to open file for reading. Starting with an empty product list." << endl;
+    }
+}
+
+void searchByID() {
+    int id, flag = 0;
+    cout << "Enter the Product ID you want to search : ";
+    cin >> id;
+
+    for (int i = 0; i < I; i++) {
+        if (id == p[i].pid) {
+            output(p[i]);
+            flag++;
+        }
+    }
+
+    if (flag == 0)
+        cout << "The Product ID: " << id << " is not in the list...\n";
+}
+
+void searchByCategory() {
+    char cat[20];
+    int flag = 0;
+    cout << "Enter the Product Category you want to search : ";
+    cin >> cat;
+    for (int i = 0; i < I; i++) {
+        if (strcmp(cat, p[i].category) == 0) {
+            output(p[i]);
+            flag++;
+        }
+    }
+
+    if (flag == 0)
+        cout << "The Product category: " << cat << " is not in the list...\n";
+}
+
+void Modify() {
+    int id, flag = 0, pos;
+    cout << "Enter the Product ID you want to Modify: ";
+    cin >> id;
+
+    for (int i = 0; i < I; i++) {
+        if (id == p[i].pid) {
+            cout << "\n\tThe following ID will be modified:\n";
+            output(p[i]);
+            flag++;
+            pos = i;
+        }
+    }
+
+    if (flag == 0) {
+        cout << "The Product ID: " << id << " is not in the list...\n";
+    } else {
+        cout << "\nEnter the new data for the above id : " << id << endl;
+        input(p[pos]);
+        cout << "\nThe data has been modified accordingly...\n";
+    }
+}
+
+int main() {
+    int ch;
+
+    readFromFile(); // Read existing data from the file on program start
+
+    do {
+        cout << "\n"
+             << endl;
+        cout << "__";
+        cout << "\n\t Inventory Management \n";
+        cout << "___\n";
+        cout << "0. Exit\n";
+        cout << "1. Add Product\n";
+        cout << "2. Display all products\n";
+        cout << "3. Search by Product ID\n";
+        cout << "4. Search by Category\n";
+        cout << "5. Modify Product Details\n";
+        cout << "__\n";
+        cout << "Enter your choice : ";
+        cin >> ch;
+        cout << "__\n\n";
+
+        switch (ch) {
+            case 1:
+                input(p[I]);
+                I++;
+                break;
+                 case 2:
+                showall();
+                break;
+            case 3:
+                searchByID();
+                break;
+            case 4:
+                searchByCategory();
+                break;
+            case 5:
+                Modify();
+                break;
+        }
+
+        writeToFile(); // Write the updated data to the file after each operation
+
+    } while (ch > 0);
+
+    return 0;
+}
