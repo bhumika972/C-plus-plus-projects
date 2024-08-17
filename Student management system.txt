@@ -1,0 +1,224 @@
+STUDENT MANAGEMENT SYSTEM 
+
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+string arr1[25],arr2[25],arr3[25],arr4[25],arr5[25],arr6[25],arr7[25];
+int total=0;
+void Enter()
+{
+    ofstream outFile("D:Studentfile.txt",ios::app);
+    if(!outFile){
+    cout<<"error opening file :"<<endl;
+    return;
+    }
+int choice;
+cout<<"\t ** Enter Student Record **"<<endl;
+cout<<" How Many Students do you Want To Enter "<<endl;
+cin>>choice;
+if(total==0){
+total=total+choice;
+for(int i=0;i<choice;i++){
+cout<<" Enter Record Of Student NO : "<<i+1<<endl;
+cout<<" Enter roll no      : ";
+cin>>arr1[i];
+cout<<" Student Name       : ";
+cin>>arr2[i];
+cout<<" Enter Father  Name : ";
+cin>>arr3[i];
+cout<<" Enter Class        : ";
+cin>>arr4[i];
+cout<<" Enter Course       : ";
+cin>>arr5[i];
+cout<<" Enter Contact No   : ";
+cin>>arr6[i];
+cout<<" Enter Address      : ";
+cin>>arr7[i];
+outFile<<arr1[i]<<" "<<arr2[i]<<" "<<arr3[i]<<" "<<arr4[i]<<" "<<arr5[i]<<" "<<arr6[i]<<" "<<arr7[i]<<" "<<endl;
+cout<<"---------------------------------"<<endl;
+outFile.close();}}
+else{
+ofstream outFile("D:Studentfile.txt",ios::app);
+if(!outFile){
+cout<<"error opening file :"<<endl;
+return;}
+for(int i=total;i<total+choice;i++){
+cout<<"plz enter student data : "<<i+1<<endl;
+cout<<"\n Enter roll no :";
+cin>>arr1[i];
+cout<<"\n Student Name :";
+cin>>arr2[i];
+cout<<"\n Enter Father  Name :";
+cin>>arr3[i];
+cout<<"\n Enter Class :" ;
+cin>>arr4[i];
+cout<<"\n Enter Course :";
+cin>>arr5[i];
+cout<<"\n Enter Contact No  :";
+cin>>arr6[i];
+cout<<"\n Enter Address :";
+cin>>arr7[i];
+outFile<<arr1[i]<<" "<<arr2[i]<<" "<<arr3[i]<<" "<<arr4[i]<<" "<<arr5[i]<<" "<<arr6[i]<<" "<<arr7[i]<<" "<<endl;
+cout<<"---------------------------------"<<endl;
+cout<<"Enter record successfully "<<endl;}
+total=total+choice;
+outFile.close();}}
+void Show()
+{ofstream outFile("D:Studentfile.txt",ios::app);
+    if(!outFile){
+    cout<<"error opening file :"<<endl;
+    return;
+    }
+if (total==0){
+cout<< " There is not data in your record "<<endl;}
+else{
+     cout<<"---------------------------Student record Table---------------------------------"<<endl;
+      cout<<"--------------------------------------------------------------------------------"<<endl;
+     cout<<"S.NO    "<<"RollNO     "<<"Name    "<<"FatherName       "<<"Class       "<<"Course       "<<"Contact       "<<"Address\n\n";
+     cout<<"--------------------------------------------------------------------------------"<<endl;
+for(int i=0;i<total;i++){
+cout<<"  "<<i+1<<"  ";
+cout<<"   "<<arr1[i]<<"  ";
+cout<<"   "<<arr2[i]<<"  ";
+cout<<"   "<<arr3[i]<<"  ";
+cout<<"   "<<arr4[i]<<"  ";
+cout<<"   "<<arr5[i]<<"  ";
+cout<<"   "<<arr6[i]<<"  ";
+cout<<"   "<<arr7[i]<<"  "<<endl;
+outFile<<arr1[i]<<" "<<arr2[i]<<" "<<arr3[i]<<" "<<arr4[i]<<" "<<arr5[i]<<" "<<arr6[i]<<" "<<arr7[i]<<" "<<endl;}}
+outFile.close();}
+void Search()
+{ofstream outFile("D:Studentfile.txt",ios::app);
+    if(!outFile){
+    cout<<"error opening file :"<<endl;
+    return;
+    }
+cout<<"\n\t\t\t*** Search Record *** "<<endl;
+if (total==0){
+cout<< " NO Record Found "<<endl;}
+else{
+string  rollno;
+cout<<" Enter roll number which you want to Search :"<<endl;
+cin>>rollno;
+ for(int i=0;i<total;i++)
+{if(rollno==arr1[i]){
+cout<<"Plz enter Data of student : "<<i+1<<endl;
+cout<<"  Rollno :"<<arr1[i]<<endl;
+cout<<"  Name  :"<<arr2[i]<<endl;
+cout<<"  Father Name :"<<arr3[i]<<endl;
+cout<<"  Class  :"<<arr4[i]<<endl;
+cout<<"  Course  :"<<arr5[i]<<endl;
+cout<<"  Contact No :"<<arr6[i]<<endl;
+cout<<"  Address :"<<arr7[i]<<endl;
+outFile<<arr1[i]<<" "<<arr2[i]<<" "<<arr3[i]<<" "<<arr4[i]<<" "<<arr5[i]<<" "<<arr6[i]<<" "<<arr7[i]<<" "<<endl;}}
+cout<<"--------------------------------------------"<<endl;}
+outFile.close();}
+void Update()
+{ofstream outFile("D:Studentfile.txt",ios::app);
+    if(!outFile){
+    cout<<"error opening file :"<<endl;
+    return;}
+if (total==0){
+cout<< " NO Record Found "<<endl;}
+else{string  rollno;
+cout<<" plz enter roll number which you want to Update :"<<endl;
+cin>>rollno;
+for(int i=0;i<total;i++)
+{if(rollno==arr1[i]){
+cout<<" Previous Record "<<endl;
+cout<<"Enter Record of Student NO : "<<i+1<<endl;
+cout<<"  Rollno      :"<<arr1[i]<<endl;
+cout<<"  Name        :"<<arr2[i]<<endl;
+cout<<"  Father Name :"<<arr3[i]<<endl;
+cout<<"  Class       :"<<arr4[i]<<endl;
+cout<<"  Course      :"<<arr5[i]<<endl;
+cout<<"  Contact No  :"<<arr6[i]<<endl;
+cout<<"  Address     :"<<arr7[i]<<endl;
+cout<<"------------------------------------------------------"<<endl;
+cout<<"\n\t\t\t*** Update Record *** "<<endl;
+cout<<"Plz enter New Record Of Student : "<<endl;
+cout<<" Enter roll no      :";
+cin>>arr1[i];
+cout<<" Student Name       :";
+cin>>arr2[i];
+cout<<" Enter Father  Name :";
+cin>>arr3[i];
+cout<<" Enter Class        :";
+cin>>arr4[i];
+cout<<" Enter Course       :";
+cin>>arr5[i];
+cout<<" Enter Contact No   :";
+cin>>arr6[i];
+cout<<" Enter Address      :";
+cin>>arr7[i];
+outFile<<arr1[i]<<" "<<arr2[i]<<" "<<arr3[i]<<" "<<arr4[i]<<" "<<arr5[i]<<" "<<arr6[i]<<" "<<arr7[i]<<" "<<endl;}}
+outFile.close();}
+cout<<"------------------------------------------------------"<<endl;}
+void Delete()
+{if (total==0){
+cout<< " NO Record Found "<<endl;}
+else{
+cout<<"\n\t\t\t*** Delete  Record *** "<<endl;int a;
+cout<< "Press 1 to delete completely record "<<endl;
+cout<< "Press 2 to delete Specfic  record "<<endl;
+cin>>a;
+if(a==1){
+total=0;
+cout<<"ALl Record is Deleted Successfully"<<endl;
+cout<<"------------------------------------------------------"<<endl;}
+else if (a==2)
+{string rollno;
+cout<<"enter roll No which you want to delete "<<endl;
+cin>>rollno;
+for(int i=0;i<total;i++)
+{if(rollno==arr1[i]){
+for(int j=i;j<total;j++){
+arr1[j]=arr1[j+1];
+arr2[j]=arr2[j+1];
+arr3[j]=arr3[j+1];
+arr4[j]=arr4[j+1];
+arr5[j]=arr5[j+1];
+arr6[j]=arr6[j+1];}
+total--;
+cout<<"You Required Record  is Delete Successfully  "<<endl;
+cout<<"------------------------------------------------------"<<endl;}}}}}
+int main()
+{int value ;
+cout << "\n\n\t\t\t**** STUDENT MANAGEMENT SYSTEM ****"<<endl;
+while(true){
+cout << "\n***   MENU *** "<<endl;
+cout << "Press 1 to Enter Record " << endl;
+cout << "Press 2 to Show  Record " << endl;
+cout << "Press 3 to Search Record " << endl;
+cout << "Press 4 to Update Record" << endl;
+cout << "Press 5 to Delete Record " << endl;
+cout << "Press 6 to Exit  " << endl;
+cout << "PLEASE ENTER YOUR CHOICE ->  " << endl;
+cin>>value;
+switch(value){
+case 1:
+Enter();
+break;
+case 2:
+Show ();
+break;
+case 3:
+Search ();
+break;
+case 4:
+Update();
+break;
+case 5:
+Delete();
+break;
+case 6:
+cout<<"\n\t\t\t THANKYOU SO MUCH FOR USING MY SOFTWARE "<<endl;
+exit(0);
+break;
+default:
+cout<<" invalid Number "<<endl;
+break;}
+}
+return 0;}
