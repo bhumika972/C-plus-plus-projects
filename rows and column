@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+int count=1,limit,limit2;
+cout<<"Number of rows = ";
+cin>>limit;
+cout<<"number of column = ";
+cin>>limit2;
+for(int x=1;x<=limit;x++){
+for(int y=1;y<=limit2;y++){
+cout<<count<<"";
+count++;}
+cout<<endl;}
+    return 0;
+}
