@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+int BasicSalary,House,Medical,Travel,GrossSalary,IncomeTax,Zakat,Lunch,NetIncome;
+cout<<"Enter Any Salary ";
+cin>>BasicSalary;
+    House=BasicSalary*45/100;
+    Medical=BasicSalary*12.5/100;
+    Travel=BasicSalary*20/100;
+    
+    GrossSalary=BasicSalary+House+Medical+Travel;
+    IncomeTax=GrossSalary*7/100;
+    Zakat=GrossSalary*2.5/100;
+    Lunch=1500;
+    NetIncome=GrossSalary-IncomeTax-Zakat-Lunch;
+    
+    
+   cout<<"   Salary Slip    "<<endl;
+   cout<<"\nBasic Salary    : "<<BasicSalary<<"/=";
+   cout<<"\nHouse (45%)     : "<<House<<"/=";
+   cout<<"\nMedical (12.5%) : "<<Medical<<"/=";
+   cout<<"\nTravel (20%)    : "<<Travel<<"/=";
+   cout<<"\n_______________   _________"<<endl;
+   cout<<"\nGrossSalary     : "<<GrossSalary<<"/=";
+   cout<<"\nIncomeTax (7%)  : "<<IncomeTax<<"/=";
+   cout<<"\nZakat (2.5%)    : "<<Zakat<<"/=";
+   cout<<"\nLunch 1500 RS   : "<<Lunch<<"/=";
+   cout<<"\n___________________________"<<endl;
+   cout<<"\nNet Income      : "<<NetIncome<<"/="<<endl;
+    
+    
+    
+    
+    
+    return 0;
+}
