@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+int num1;
+cout<<"Number1 =";
+cin>>num1;
+int num2 ;
+cout<<"Number2 = ";
+cin>>num2;
+if(num1>num2){
+
+    cout << "The Number Is Maximum " << endl;
+    }
+    if(num1<num2){
+    cout<<"The number is also Maximum "<<endl;
+    }
+    return 0;
+}
