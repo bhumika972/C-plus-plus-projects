@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+ int limit;
+ cout<<" Please Enter Limit = ";
+ cin>>limit;
+ cout<<"list Of Reverse Number are "<<endl;
+ for(int number=limit;number>=1;number--){
+   cout<<number<<endl;
+    }
+    cout<<"list Of Reverse Number are "<<endl;
+     int num=limit;
+     
+     
+    while(num>=1){
+   cout<<num<<endl;
+    num--;
+    }
+    cout<<"list Of Reverse Number are "<<endl;
+    
+    int n=limit;
+    do{
+    cout<<n<<endl;
+    n--;}
+    while(n>=1);
+    
+    return 0;
+}
