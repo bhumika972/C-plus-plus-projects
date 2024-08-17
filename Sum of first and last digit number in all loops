@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{int num,last, first ,sum=0;
+    cout << "Enter Number " << endl;
+    cin>>num;
+    last=num%10;
+    for(; num>=10;num/=10){
+    }
+   first = num;
+    cout<<"The first digit is "<<first<<endl;
+    cout<<"The last  digit is "<<last<<endl;
+    sum=first+last;
+    cout<<"\nsum of First and last Digit" <<sum<<endl;
+    
+    while(num>=10){
+    num/=10;
+    }
+    cout<<"The first digit is "<<first<<endl;
+    cout<<"The last  digit is "<<last<<endl;
+    sum=first+last;
+    cout<<"\nsum of First and last Digit" <<sum<<endl;
+    
+    
+    do{
+    }while(num>=10);
+    num/=10;
+    cout<<"The first digit is "<<first<<endl;
+    cout<<"The last  digit is "<<last<<endl;
+    sum=first+last;
+    cout<<"\nsum of First and last Digit" <<sum<<endl;
+    
+    return 0;
+}
