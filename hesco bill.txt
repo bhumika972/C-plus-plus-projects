@@ -1,0 +1,66 @@
+HESCO BILL 
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+int unit,amt;
+cout<<" unit consumed :"<<endl;
+cin>>unit;
+if(unit<=50){
+amt=unit*3;
+cout<<"Hesco Bill"<<endl;
+cout<<unit<<"*3="<<amt<<endl;}
+else if(unit>=51&&unit<=100){
+amt=150+((unit-50)*4);
+cout<<" Bill"<<endl;
+cout<<"50*30=150"<<endl;
+cout<<(unit-50)<<"*4="<<((unit-50)*4)<<endl;}
+else if(unit>=101&&unit<=200){
+amt=150+200+((unit-100)*5);
+cout<<" Bill"<<endl;
+cout<<"50*3=150"<<endl;
+cout<<"51*4=200"<<endl;
+cout<<(unit-100)<<"*5="<<((unit-100)*5)<<endl;}
+else if(unit>=201&&unit<=300){
+amt=150+200+500+((unit-200)*6);
+cout<<" Bill"<<endl;
+cout<<"50*3=150"<<endl;
+cout<<"51*4=200"<<endl;
+cout<<"100*4=500"<<endl;
+cout<<(unit-200)<<"*6="<<((unit-200)*6)<<endl;}
+else if(unit>=301&&unit<=400){
+amt=150+200+500+600+((unit-300)*8);
+cout<<" Bill"<<endl;
+cout<<"50*3=150"<<endl;
+cout<<"51*4=200"<<endl;
+cout<<"100*4=500"<<endl;
+cout<<"100*6=600"<<endl;
+cout<<(unit-300)<<"*8="<<((unit-300)*8)<<endl;}
+else if(unit>=401&&unit<=500){
+amt=150+200+500+600+800+((unit-400)*10);
+cout<<" Bill"<<endl;
+cout<<"50*30=150"<<endl;
+cout<<"51*4=200"<<endl;
+cout<<"100*4=500"<<endl;
+cout<<"100*6=600"<<endl;
+cout<<"100*8=800"<<endl;
+cout<<(unit-400)<<"*10="<<((unit-400)*10)<<endl;}
+else if(unit>500){
+amt=150+200+500+600+800+1000+((unit-500)*15);
+cout<<" Bill"<<endl;
+cout<<"50*30=150"<<endl;
+cout<<"51*4=200"<<endl;
+cout<<"100*4=500"<<endl;
+cout<<"100*6=600"<<endl;
+cout<<"100*8=800"<<endl;
+cout<<"100*10=1000"<<endl;
+cout<<(unit-500)<<"*15="<<((unit-500)*15)<<endl;}
+cout<<"Bill Is = "<<amt<<"Rs"<<endl;
+
+    return 0;
+}
