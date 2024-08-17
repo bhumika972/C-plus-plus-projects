@@ -1,0 +1,46 @@
+ATM MACHINE CODE 
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+int amount;
+cout<<"Total Amount =";
+cin>>amount;
+int N5000,N1000,N500,N100,N50,N20,N10,C5,C2,C1;
+N5000=amount/5000;
+amount=amount%5000;
+N1000=amount/1000;
+amount=amount%1000;
+N500=amount/500;
+amount=amount%500;
+N100=amount/100;
+amount=amount%100;
+N50=amount/50;
+amount=amount%50;
+N20=amount/20;
+amount=amount%20;
+N10=amount/10;
+amount=amount%10;
+C5=amount/5;
+amount=amount%5;
+C2=amount/2;
+amount=amount%2;
+C1=amount/1;
+amount=amount%1;
+    cout << "\n  ATM Program   "<<endl;
+    cout << "\n Notes of 5000 = " << N5000<<endl;
+    cout << "\n Notes of 1000 = " << N1000<<endl;
+    cout << "\n Notes of 500  = " << N500<<endl; 
+    cout << "\n Notes of 100  = " << N100<<endl;
+    cout << "\n Notes of 50   = " << N50<<endl;
+    cout << "\n Notes of 20   = " << N20<<endl;
+    cout << "\n Notes of 10   = " << N10<<endl;
+    cout << "\n Coin of 5     = " << C5<<endl;
+    cout << "\n Coin of 2     = " << C2<<endl;
+    cout << "\n Coin of 1     = " << C1<<endl;
+    
+    
+    return 0;
+}
