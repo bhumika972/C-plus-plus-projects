@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+char Alphabet;
+cout<<"Alphabet = ";
+cin>>a;
+if(a=='a'||a=='e'||a=='i'||a=='o'||a=='u'){
+cout<<"The alphabet is vowel"<<endl;
+}
+else {
+cout<<"The alphabet is Consonant";
+
+}
+
+
+    return 0;
+} 
