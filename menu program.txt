@@ -1,0 +1,286 @@
+Menu Program 
+
+#include <iostream>
+
+using namespace std;
+void Menu(){
+cout << "\n Menu " <<endl;
+cout<<"\n1. ATM";
+cout<<"\n2. Calculator";
+cout<<"\n3.TABLE ";
+cout<<"\n4.Profit Loss ";
+cout<<"\n5. SUM OF EVEN NUMBERS ";
+cout<<"\n6.SALARY SLIP";
+cout<<"\n7.Marksheet";
+cout<<"\n8.Exit"<<endl;
+cout<<"choose any numbers"<<endl;}
+//Atm Program
+    void atm() {
+    int amount;
+    cout << "Enter the amount: ";
+    cin >> amount;
+    if (amount <= 0) {
+        cout << "Invalid amount entered." << endl;
+   } else {
+    int N[] = {1000, 500, 100, 50, 20, 10, 5, 1};
+    int notes[8] = {0};
+for (int i = 0; i < 8; ++i) {
+if (amount >= N[i]) {
+notes[i] = amount / N[i];
+amount %= N[i];}}
+cout << "Number of notes:" << endl;
+for (int i = 0; i < 8; ++i) {
+if (notes[i] > 0) {
+cout <<"Notes of "<< N[i] << " : " << notes[i] << endl;}}}}
+// CALCULATOR
+int Addition(){
+int num1,num2;
+cout<<"plz enter number "<<endl;
+cin>>num1;
+cout<<"plz enter number "<<endl;
+cin>>num2;
+return num1+num2;}
+int Subtraction(){
+int num1,num2;
+cout<<"plz enter number "<<endl;
+cin>>num1;
+cout<<"plz enter number "<<endl;
+cin>>num2;
+return num1-num2;}
+int Multiplication(){
+int num1,num2;
+cout<<"plz enter number "<<endl;
+cin>>num1;
+cout<<"plz enter number "<<endl;
+cin>>num2;
+return num1*num2;}
+int Division(){
+int num1,num2;
+cout<<"plz enter number "<<endl;
+cin>>num1;
+cout<<"plz enter number "<<endl;
+cin>>num2;
+return num1/num2;}
+int remainder(){
+int num1,num2;
+cout<<"plz enter number "<<endl;
+cin>>num1;
+cout<<"plz enter number "<<endl;
+cin>>num2;
+return num1%num2;}
+void Table(){
+int number,count,limit;
+cout<<" Enter the Number "<<endl;
+cin>>number;
+cout<<" Enter limit "<<endl;
+cin>>limit;
+for(count=1; count<=limit; count++){
+cout<<number << "*" <<count<<" = "<< (number*count) <<endl;
+}}
+//profit loss
+int  Profitloss (){
+int  cost ,sell,profit,loss;
+cout<<"PIZ ENTer cost price  "<<endl;
+cin>>cost;
+cout<<"PIZ Enter selling price  "<<endl;
+cin>>sell;
+ profit=sell-cost ;
+loss=cost-sell;
+if(cost>sell){
+cout<<"loss"<<endl;}
+else if(sell>cost){
+cout<<"profit "<<endl;}}
+//sum of even Number
+int SumOfEven(){
+int limit ,sum=0;
+cout<<"Please Enter Limit = ";
+cin>>limit;
+for(int num=2;num<=limit;num+=2){
+    cout << num<< endl;
+    sum+=num;}
+    cout<<"sum of even number"<<sum<<endl;}
+    //sa;ary slip
+int  SalarySlip (int BasicSalary ){
+}
+int House(int BasicSalary){
+return BasicSalary*45/100;}
+int Medical(int BasicSalary){
+   return BasicSalary*12.5/100;}
+int Travel(int BasicSalary){
+return BasicSalary*20/100;}
+int Incometax(int GrossSalary){
+return GrossSalary*7/100;}
+int Zakat(int GrossSalary){
+return GrossSalary*2.5/100;}
+int Lunch(){
+    return 1500;}
+// Marksheet Program
+int EnglishGrade (int English){
+if(English>=80){
+cout<<"\nEnglish  " << English << "  A+";}
+else if(English>=70&&English<80){
+cout<<"\nEnglish  " <<  English <<"  A ";}
+else if(English>=65&&English<70){
+cout<<"\nEnglish  " <<  English <<"  B";}
+else if(English>=60&& English<65){
+cout<<"\nEnglish  " <<  English <<"  C";}
+else if(English<60){
+cout<<"\nEnglish  " <<  English <<"  Fail";
+return English;}}
+int MathsGrade(int Maths ){
+if (Maths>=80){
+cout<<"\nMaths    " << Maths    <<"  A+";
+}else if(Maths>=70&&Maths<80){
+cout<<"\nMaths    " << Maths    <<"  A ";}
+else if(Maths>=65&&Maths<70){
+cout<<"\nMaths    " << Maths    <<"  B";}
+else if(Maths>=60&&Maths<65){
+cout<<"\nMaths    " <<  Maths   <<"  C";}
+else if(Maths<60){
+cout<<"\nMaths    " <<  Maths   <<" Fail";}}
+int ComputerGrade(int Computer){
+if(Computer>=80){
+cout<<"\nComputer "<< Computer  <<"  A+";}
+else if(Computer>=70&&Computer<80){
+cout<<"\nComputer " << Computer <<"  A";}
+else if(Computer>=65&& Computer<70){
+cout<<"\nComputer " << Computer <<"  B";}
+else if(Computer>=60&& Computer<65){
+cout<<"\nComputer " << Computer <<"  C";}
+if(Computer<60){
+cout<<"\nComputer " << Computer <<" Fail";}}
+int CPlusGrade(int CPlus){
+if(CPlus>=80){
+cout<<"\nCPlus    "<<   CPlus  <<"  A+";}
+else if(CPlus>=70&&CPlus<80){
+cout<<"\nCPlus    "<<   CPlus  <<"  A";}
+else if(CPlus>=65&&CPlus<70){
+cout<<"\nCPlus    " <<  CPlus  <<"  B";}
+else if(CPlus>=60&&CPlus<65){
+cout<<"\nCPlus    " <<  CPlus  <<"  C";}
+if(CPlus<60){
+cout<<"\nCPlus    " <<  CPlus  <<" Fail ";}}
+int ITCGrade(int ITC){
+if(ITC>=80){
+cout<<"\nITC      "<< ITC      <<"  A+ ";}
+else if(ITC>=70&&ITC<80){
+cout<<"\nITC      " << ITC     <<"  A";}
+else if(ITC>=65&&ITC<70){
+cout<<"\nITC      " << ITC     <<"  B";}
+else if(ITC>=60&&ITC<65){
+cout<<"\nITC      " << ITC     <<"  C";}
+if(ITC<60){
+cout<<"\nITC      " <<ITC      <<" Fail";}}
+int Obtained(int English ,int Maths, int Computer ,int CPlus, int ITC){
+    return English+Maths+Computer+CPlus+ITC;
+}
+int Total(){
+return 500;}
+int Percentage(int Obtained,int Total ){
+return ((Obtained*100)/Total);}
+int Grade(int Percentage  ){
+ if(Percentage>=90){
+cout<<"\nGrade   "  <<" A+";}
+else if(Percentage>=85&& Percentage<90){
+cout<<"\nGrade   "  <<" A";}
+else if(Percentage>=80&& Percentage<85){
+cout<<"\nGrade   "   <<" B";}
+else if(Percentage>=70&& Percentage<80){
+cout<<"\nGrade   "     <<" C";}
+else if(Percentage<=68){
+cout<<"\nGrade   "<<" Fail";}
+else{
+cout<<"\nGrade "<<"Fail";}
+return Percentage  ;}
+int main()
+{int menu;
+    do {
+Menu();
+cin>>menu;
+// Atm Program
+if (menu==1){
+ atm();}
+
+//CALCULATOR
+    if (menu==2){
+     int result=Addition();
+    cout << "Addition is "<<result<< endl;
+    result=Subtraction();
+     cout << "subtraction is "<<result<< endl;
+     result=Multiplication();
+     cout << "Multiplication is "<<result<< endl;
+     result=Division();
+     cout << "division  is "<<result<< endl;
+     result=remainder();
+     cout << "remainder   is "<<result<< endl;}
+     //TABLE
+     else if (menu==3){
+     Table();
+     }
+     // PROFIT LOSS
+     else if(menu==4){
+        int result=Profitloss();}
+        else if(menu==5){
+            int result=SumOfEven();
+        }
+        //SALARY SLIP
+        else if(menu==6){
+            int BasicSalary,GrossSalary,NetIncome;
+   cout<<"Enter Any Salary ";
+   cin>>BasicSalary;
+   cout<<"   Salary Slip    "<<endl;
+   cout<<"\nBasic Salary    : "<<BasicSalary<<"/=";
+   int  result=House( BasicSalary );
+   cout<<"\nHouse (45%)     : "<<result<<"/=";
+    int answer=Medical( BasicSalary );
+  cout<<"\nMedical (12.5%) : "<<result<<"/=";
+    int ans =Travel( BasicSalary );
+   cout<<"\nTravel (20%)    : "<<result<<"/=";
+   cout<<"\n_______________   _________"<<endl;
+   GrossSalary=BasicSalary+result+answer+ans;
+  cout<<"\nGrossSalary     : "<<GrossSalary<<"/=";
+   int answer2=Incometax( GrossSalary );
+   cout<<"\nIncomeTax (7%)  : "<<answer2<<"/=";
+   int answer3=Zakat( GrossSalary);
+   cout<<"\nZakat (2.5%)    : "<<answer3<<"/=";
+    int  result2=Lunch( );
+   cout<<"\nLunch 1500 RS   : "<<result2<<"/=";
+   cout<<"\n___________________________"<<endl;
+   NetIncome=GrossSalary-answer2-answer3-result2;
+   cout<<"\nNet Income      : "<<NetIncome<<"/="<<endl;}
+   else if (menu==7){
+int English,Maths,Computer,CPlus,ITC;
+cout<<"English ";
+cin>>English ;
+cout<<"Maths ";
+cin>>Maths;
+cout<<"Computer";
+cin>>Computer;
+cout<<"C++ ";
+cin>>CPlus;
+cout<<"ITC";
+cin>>ITC;
+cout<<"   Marksheet   "<<endl;
+cout<<"Subject Marks Status   "<<endl;
+cout<<"______________________________"<<endl;
+int result=EnglishGrade(English);
+ result=MathsGrade(Maths);
+ result=ComputerGrade(Computer);
+ result=ITCGrade(ITC);
+ result=CPlusGrade(CPlus);
+ int answer =Obtained(  English, Maths,Computer,CPlus, ITC);
+cout<<"\nObtained = "<<answer;
+ result =Total();
+cout<<"\nTotal = "<<result ;
+ int slip=Percentage(answer, result );
+cout<<"\nPercentage =" <<slip ;
+int conclusion =Grade(slip  );}
+    else if(menu==8) {
+cout<<"THANKYOU SO MUCH FOR USING MY SOFTWARE "<<endl;}}
+while(menu==1||menu==2||menu==3||menu==4||menu==5||menu==6||menu==7||menu==8);
+
+
+    return 0;
+}
+
+
